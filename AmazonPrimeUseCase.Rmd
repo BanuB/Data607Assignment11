@@ -1,0 +1,115 @@
+---
+title: "Assignment11"
+author: "Banu Boopalan"
+date: "11/9/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment 11 - Perform Scenario Analysis 
+
+Your task is to:
+
+Identify an informational web site such as an info-graphic (providing the URL), then
+Answer the three scenario design questions for this web site.  
+
+Who are your target users?
+What are their key goals?
+How can you help them accomplish those goals?
+
+
+## Amazon Prime Video - My Use Case
+
+I Who are your target users? Target users of a web application for Amazon Prime Video
+
+1. A user who has a prime account service
+2. The user's demographic information and profile information. A user can be segmented based on metadata about them within Amazon's user profile attributes. For instance, in our case, it is my husband's account, the devices we have are registered in Amazon Prime and we have subscription. The demographic is Male [age band], married , employed along with history of Prime membership, along with children (of 2 , their age/gender) along with my demographic info and social information
+3. A user can also be someone who has an account with Amazon but does not have Prime membership. 
+
+
+II What are their key goals?
+
+1. Key Goals for this service is to allow Amazon to sell its products such as Rent or Buy movies via Amazon Prime
+2. Amazon can spend more money  in content and capture Prime video goers and allow them to rent or buy from them when titles are not available for free. Alternatively the recommender systems allow users to be a longtime Prime customer as a result enable Amazon to capitalize on Click through and conversion rates to buy its services here. This apparently has implications for other Content only services like Netflix if more companies go down this model to use their existing user base to buy more content via Rent/Buy products
+4. Keeping User Data safe through Security strategy for web application design/infrastructure
+5. Performance, scaling and infrastructure needs for recommendation algorithms on Amazon Prime application and cost associated with software application design, delivery and production deployment and infrastructure programs
+
+
+III How can you help them accomplish those goals?
+
+To reverse engineer this website, we can take principles of Product Management as well as Canvas that have been utilized by companies to break down a Road map project into Product Product Backlog, User Stories, Sprint, Release planning and Deployment. 
+
+Canvas for User Experience Design and product design can be considered in addition to Scenario Analysis above.
+
+## User Experience Tools in Product Design
+
+SOURCE:The Business Model Canvas by Alex Osterwalder 
+https://www.strategyzer.com/canvas/business-model-canvas
+
+SOURCE:The Recommender Canvas - https://medium.com/@guidovancapelleveen/the-recommender-canvas-everything-you-wanted-to-know-about-recommender-system-design-fdc226246f0d
+
+SOURCE:Utilizing this info-graphic which is showcased at the ACM conference we can build our own recommender application
+https://recsys.acm.org/wp-content/uploads/2019/09/recsys-19-material-microsoft.pdf
+
+
+Companies can perform some scenario analysis design above and can try to breakdown how a complex website such as Amazon Prime Video integrates Recommender system along with the Website design, however, I don't have much experience with web design but as a Devops engineer, I have seen the back end of how feature and functionality are built and deployed to websites at my firm. 
+## My Amazon Prime Website and Recommendation Feature on Website Analysis
+
+We see 3 features that allows users to Watch content that is recommended to them. 
+
+1. Based on the Titles you have watched and more (Prime Top TV for Kids and Family)
+2. TV Shows we think you like
+3. Based on titles you have watched and more
+
+## Technical Goals for Recommendation System on Amazon Prime Website
+
+Problem Statement : 
+
+1. My prime video website shows 32 out of 36 titles that I will not watch.
+2. The website has too many content which is overwhelming to see.
+
+## How can we address my concerns above
+
+SOURCE : IEEE Internet Computing, Greg Linden, Brent Smith, and Jeremy York (2003): Amazon.com Recommendations:  Item-to-Item Collaborative Filtering.
+SOURCE: (COSINE FORMULA): https://www.sciencedirect.com/topics/computer-science/cosine-similarity
+
+1. Database transaction purchase history, social information, demographic information to build a customer profile. 
+
+2. Internal and External data sources to consider would be Amazon User profile data, transaction purchase history, product catalog or items list, All Prime users and their profile attributes such as demographic and purchase history, any user reviews/ratings provided on movie content/title. 
+
+3. For external data, I am not sure if YouTube data can be purchased by Amazon.
+I for instance prefer YouTube more and I tend to watch shows from Turkey and YouTube was where I found this content and a ton of shows from Turkey available and recommended immediately in the watch list so I don't have to spend time finding such shows. 
+
+4. The model should be tested for user preference, if Amazon does not have international content similar to the content the user prefers on YouTube, Amazon can buy international content or suggest similar movies within its movie titles similar to the user preferences on you tube.
+
+5. If k nearest neighbor is used, the customer profile will be considered to find closest neighbors and their highly rated movies/shows.  Large number of users and product but only few reviews, ratings and purchase history (sparse data) or lack of data problem (cold-start) can cause problems with recommendation algorithm.  For sparse data problem if the recommendation algorithm can use a Cosine Similarity rather than Pearson coefficient or Euclidean distance that can help the presence of 0's or a user not having rated a movie or a show not impact the recommendation algorithm.
+
+6. Minimize the # of titles shown (36) on the web application so there is fewer shows or TV movies to choose from. From a user design standpoint, I think there are too many movies on the website to choose from. It would be good if the recommendation features and the system can be customized for users and website design is addressing the presence of too much content on the page. 
+
+7. Have a way for the user to provide feedback on why they prefer the title so the recommendation system can fine tune and get better results. Users are unlikely to provide feedback so the system can identify the closest neighbors and then take their top rated movies/shows so the system can recommend those through collaborative filtering. 
+
+8. CLUSTER MODEL and ITEM TO ITEM collaborative filtering - Building a good cluster model to segment user profiles that are similar. Collecting and storing user preference data, also tracking the real time relevance of user preferences along with demographic data would allow the system to construct a better user persona or profile. For instance, as a family with 2 young children, I do not have time to sit through a 2 hour movie, but a 1 hour episode is better.  From a genre aspect, at the end of the work week, what makes the user relax and recharge, for instance, I will not watch serious movies, prefer comedy or light hearted family dramas, also these days with my children, the movies that they prefer to watch is important. 
+
+## Devops Considerations from System Performance, monitoring, deployment and infrastructure needs for Website and Machine Learning algorithms.
+
+1. Data Modeling and Data Engineering
+2. Optimization and Evaluation of the recommender system and the Dashboard showing metrics around performance
+3. ETL architecture on storing and retrieving data
+4. Infrastructure aspects on how a model is integrated and deployed or teared down in real time if performance is not well
+5. Security Architecture and the Penetration testing on website design and other constraints
+6. Production deployment on isolating and fine tuning models
+7. On Amazon Prime Video Direct there are some aspects around Content metrics that Amazon looks at to determine net revenue calculations. Are customers engaging with the content, certain metric such as stream time, customers watching content on multiple devices, engagement with episodes etc.. are all areas that Amazon can consider when customers engage with the content which content is getting more watch time and analyzing that along with the recommendation model would allow the fine tuning of recommendation systems
+
+## Summary
+
+In conclusion, the modern web application and integration of recommendation and machine algorithms will grow in the future. Some of the devops lifecycle and security considerations are equally important as well in modern web applications and data science applications as more companies use recommender algorithms for a better user experience and product value. As more content from other countries are available on YouTube and Facebook, the world is more global in its preferences for video and audio content. 
+
+
+
+
+
+
+
